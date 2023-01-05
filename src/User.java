@@ -2,13 +2,14 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class User {
-    long id;
-    String email;
-    String password;
-    String firstName;
-    String lastName;
-    Integer role;
-    BigDecimal rating;
+    private long id;
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private Integer role;
+    private BigDecimal rating;
+
     public User(String email, String password, String firstName, String lastName, Integer role, BigDecimal rating) {
         this.email = email;
         this.password = password;
@@ -16,10 +17,6 @@ public class User {
         this.lastName = lastName;
         this.role = role;
         this.rating = rating;
-    }
-
-    public User() {
-
     }
 
     public long getId() {
@@ -83,7 +80,9 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(role, user.role) && Objects.equals(rating, user.rating);
+        return id == user.id && Objects.equals(email, user.email) && Objects.equals(password, user.password)
+                && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName)
+                && Objects.equals(role, user.role) && Objects.equals(rating, user.rating);
     }
 
     @Override
